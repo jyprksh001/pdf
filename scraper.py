@@ -137,18 +137,4 @@ def dropper(table):
 
 dropper('fabvarn')
 
-skiplist=['COUNTRY','FACTORY NAME','ADDRESS','CITY','REGION']
-bigdata=[]
-for page in pages[1:]:
-    for el in page:
-        if el.tag == "text" and el.text not in skiplist:
-            if int(el.attrib['left']) < 100: data = { 'Country': el.text }
-            elif int(el.attrib['left']) < 250: data['Factory name'] = el.text
-            elif int(el.attrib['left']) < 500: data['Address'] = el.text
-            elif int(el.attrib['left']) < 1000: data['City'] = el.text
-            else:
-                data['Region'] = el.text
-                print data
-                bigdata.append( data.copy() )
-    scraperwiki.sqlite.save(unique_keys=[], table_name='fabvarn', data=bigdata)
-    bigdata=[]'''
+
