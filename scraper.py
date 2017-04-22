@@ -29,8 +29,8 @@ import scraperwiki
 import urllib2, lxml.etree
 
 # 2. The URL/web address where we can find the PDF we want to scrape
-url = 'http://cdn.varner.eu/cdn-1ce36b6442a6146/Global/Varner/CSR/Downloads_CSR/Fabrikklister_VarnerGruppen_2013.pdf'
-
+# url = 'http://cdn.varner.eu/cdn-1ce36b6442a6146/Global/Varner/CSR/Downloads_CSR/Fabrikklister_VarnerGruppen_2013.pdf'
+url='http://git.macropus.org/2011/11/pdftotext/example/journal.pone.0026738.pdf'
 # 3. Grab the file and convert it to an XML document we can work with
 pdfdata = urllib2.urlopen(url).read()
 xmldata = scraperwiki.pdftoxml(pdfdata)
